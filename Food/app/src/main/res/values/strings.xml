@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Food</string>
+    <string name="homepage">食物百科 </string>
+    <string name="library">逛吃</string>
+    <string name="my">我的</string>
+    <string name="title">逛吃</string>
 </resources>
