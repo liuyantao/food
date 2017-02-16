@@ -5,4 +5,12 @@
     <color name="colorAccent">#FF4081</color>
     <color name="text_color_nor">#434343</color>
     <color name="text_color_sel">#ccad58</color>
+
+    <color name="scrollview">#e9f1f7</color>
+    <color name="fragment_home_tv">#b2b2b2</color>
+    <color name="library_query_tv">#ffffff</color>
+    <color name="library_query_tv_color">#e88749</color>
+    <color name="library_fragment_color_food">#797c7f</color>
+    <color name="library_fragment_color_food_background">#e3e5e7</color>
+    <color name="item_showtv">#9e9595</color>
 </resources>

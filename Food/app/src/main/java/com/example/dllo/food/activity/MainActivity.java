@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         //设置进入界面的时候就是首页 食物百科的页面
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.tab_rg, homepageFragment);
+        transaction.replace(R.id.tab_rg, libraryFragment);
         transaction.commit();
     }
 
@@ -61,12 +61,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         FragmentTransaction transaction = manager.beginTransaction();
         //绑定id  实现方法replace移除
         switch (view.getId()) {
-            case R.id.tab_homepage:
-                transaction.replace(R.id.tab_rg, homepageFragment);
-                break;
             case R.id.tab_library:
                 transaction.replace(R.id.tab_rg, libraryFragment);
                 break;
+            case R.id.tab_homepage:
+                transaction.replace(R.id.tab_rg, homepageFragment);
+                break;
+
             case R.id.tab_my:
                 transaction.replace(R.id.tab_rg, myFragment);
                 break;
@@ -74,5 +75,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 break;
         }
         transaction.commit();
+    }
+
+    @Override
+    protected <T extends View> T bindView(int resId) {
+        return super.bindView(R.id.tab_library);
     }
 }

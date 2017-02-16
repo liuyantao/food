@@ -5,5 +5,25 @@
     <dimen name="text_font_large">20sp</dimen>
     <dimen name="text_font_small">14sp</dimen>
     <dimen name="splash_text_bottom">30dp</dimen>
+    <dimen name="fragment_home_tv">10dp</dimen>
+    <dimen name="fragment_home_iv">8dp</dimen>
+    <dimen name="fragment_library_iv">180dp</dimen>
+    <dimen name="fragment_library_logo_iv_width">55dp</dimen>
+    <dimen name="fragment_library_logo_iv_height">20dp</dimen>
+    <dimen name="library_query_tv">40dp</dimen>
+    <dimen name="library_query_tv_margin">12dp</dimen>
+    <dimen name="library_fragment_linearlayout_height">60dp</dimen>
+    <dimen name="library_fragment_marginBottom_food">5dp</dimen>
+    <dimen name="fragment_my_iv">200dp</dimen>
+    <dimen name="fragment_my_tv">15dp</dimen>
+    <dimen name="fragment_my_btn_register">30dp</dimen>
+    <dimen name="fragment_my_riv">80dp</dimen>
+    <dimen name="item_home_first_textview">3dp</dimen>
+    <dimen name="layout_height_relativeLayout">250dp</dimen>
+    <dimen name="lanout_height_iamgeview">230dp</dimen>
+    <dimen name="item_home_lore_layout">120dp</dimen>
+    <dimen name="layout_height">85dp</dimen>
+    <dimen name="item_home_review_image">270dp</dimen>
+    <dimen name="layout_marginTop">35dp</dimen>
 
 </resources>

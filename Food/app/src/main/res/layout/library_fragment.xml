@@ -1,11 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e9f1f7"
+    android:orientation="vertical"
    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/library_photo_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fragment_library_iv"
+            android:background="@mipmap/img_home_bg" />
 
+        <ImageView
+            android:id="@+id/library_logo_iv"
+            android:layout_width="@dimen/fragment_library_logo_iv_width"
+            android:layout_height="@dimen/fragment_library_logo_iv_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/fragment_home_tv"
+            android:background="@mipmap/ic_home_logo" />
 
+        <TextView
+            android:id="@+id/library_query_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/library_logo_iv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/library_query_tv"
+            android:text="@string/query"
+            android:textColor="@color/library_query_tv"/>
 
+        <RelativeLayout
+            android:id="@+id/library_search_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/library_query_tv"
+            android:layout_centerHorizontal="true">
 
-</RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/library_query_tv"
+                android:layout_margin="@dimen/library_query_tv_margin"
+                android:background="@color/library_query_tv" />
+
+            <ImageView
+                android:id="@+id/library_search_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/library_query_tv_margin"
+                android:src="@mipmap/ic_home_search" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/library_search_iv"
+                android:text="@string/library_query_tv"
+                android:textColor="@color/library_query_tv_color" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/library_fragment_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/library_fragment_linearlayout_height"
+            android:layout_below="@+id/library_photo_iv"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/library_query_tv_margin"
+            android:layout_marginTop="@dimen/fragment_home_tv"
+            android:background="@color/library_query_tv">
+
+            <RadioButton
+                android:id="@+id/framgent_library_analyzeRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_library_food"
+                android:gravity="center"
+                android:text="@string/library_fragment_radioButton_food"
+                android:textColor="@color/library_fragment_color_food" />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/library_fragment_marginBottom_food"
+                android:layout_marginTop="@dimen/library_fragment_marginBottom_food"
+                android:background="@color/library_fragment_color_food_background" />
+
+            <RadioButton
+                android:id="@+id/framgent_library_radioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_library_seek"
+                android:gravity="center"
+                android:text="@string/library_fragment_radioButton_seek"
+                android:textColor="@color/library_fragment_color_food" />
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/library_fragment_marginBottom_food"
+                android:layout_marginTop="@dimen/library_fragment_marginBottom_food"
+                android:background="@color/library_fragment_color_food_background" />
+
+            <RadioButton
+                android:id="@+id/library_fragment_scanRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_library_scan"
+                android:gravity="center"
+                android:text="@string/library_fragment_radioButton_scan"
+                android:textColor="@color/library_fragment_color_food" />
+        </LinearLayout>
+        <!--食物分类-->
+        <LinearLayout
+            android:id="@+id/library_fragment_linearlayoutfood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/library_fragment_linearlayout"
+            android:layout_margin="@dimen/library_query_tv_margin"
+            android:background="@color/library_query_tv"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/fragment_home_tv"
+                android:text="@string/library_fragment_text_food" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/qqtwo" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/library_fragment_recyclerviewlibrary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fragment_home_tv"
+                android:layout_marginLeft="@dimen/library_query_tv_margin"
+                android:layout_marginRight="@dimen/library_query_tv_margin"/>
+
+        </LinearLayout>
+        <!--热门品牌-->
+        <!--linearlayout嵌套recycleview-->
+        <LinearLayout
+            android:id="@+id/library_fragment_linearlayoutbrand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/library_fragment_linearlayoutfood"
+            android:layout_margin="@dimen/library_query_tv_margin"
+            android:background="@color/library_query_tv"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/fragment_home_tv"
+                android:text="@string/library_fragment_text_brand" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/qqtwo" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/library_fragment_recyclerviewbrand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fragment_home_tv"
+                android:layout_marginLeft="@dimen/library_query_tv_margin"
+                android:layout_marginRight="@dimen/library_query_tv_margin"/>
+        </LinearLayout>
+        <!--连锁餐饮-->
+        <!--linearlayout嵌套recycleview-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/library_fragment_linearlayoutbrand"
+            android:layout_margin="@dimen/library_query_tv_margin"
+            android:background="@color/library_query_tv"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/fragment_home_tv"
+                android:text="@string/library_fragment_text_shop" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/qqtwo" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/library_fragment_recyclerviewshop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fragment_home_tv"
+                android:layout_marginLeft="@dimen/library_query_tv_margin"
+                android:layout_marginRight="@dimen/library_query_tv_margin"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -22,17 +22,17 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/tab_homepage"
+            android:id="@+id/tab_library"
             style="@style/radiobutton"
             android:checked="true"
             android:drawableTop="@drawable/tab_library_btnstytle"
-            android:text="@string/homepage" />
+            android:text="@string/library" />
 
         <RadioButton
-            android:id="@+id/tab_library"
+            android:id="@+id/tab_homepage"
             style="@style/radiobutton"
             android:drawableTop="@drawable/tab_homepage_btnstytle"
-            android:text="@string/library" />
+            android:text="@string/homepage" />
 
         <RadioButton
             android:id="@+id/tab_my"

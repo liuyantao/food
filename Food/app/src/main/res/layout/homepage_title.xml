@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/homepage_title_rl"
+    android:id="@+id/homepage_title_tl"
     android:layout_width="match_parent"
-    android:layout_height="30dp">
+    android:layout_height="50dp">
 <TextView
     android:id="@+id/homepage_title_tv"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
     android:gravity="center"
-    android:text="@string/title"
+    android:text="@string/homepage_title"
     />
     <ImageButton
         android:id="@+id/homepage_title_ib"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:background="@null"
         android:scaleType="center"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_home_camera"/>
 </RelativeLayout>

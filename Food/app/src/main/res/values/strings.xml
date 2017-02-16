@@ -1,7 +1,31 @@
 <resources>
     <string name="app_name">Food</string>
-    <string name="homepage">食物百科 </string>
-    <string name="library">逛吃</string>
+    <string name="homepage"> 逛吃</string>
+    <string name="library">食物百科</string>
     <string name="my">我的</string>
-    <string name="title">逛吃</string>
+    <string name="homepage_title">逛吃</string>
+    <string name="query">查 询 食 物 信 息</string>
+    <string name="library_query_tv">请输入食物名称</string>
+    <string name="library_fragment_radioButton_food">饮食分析</string>
+    <string name="library_fragment_radioButton_seek">搜索对比</string>
+    <string name="library_fragment_radioButton_scan">扫码对比</string>
+    <string name="library_fragment_text_food">食物分类</string>
+    <string name="library_fragment_text_brand">热门品牌</string>
+    <string name="library_fragment_text_shop">连锁餐饮</string>
+
+    <string name="fragment_my_btn_register">点击登录</string>
+    <string name="fragment_my_btn_photo">我的照片</string>
+    <string name="fragment_my_btn_collect">我的收藏</string>
+    <string name="fragment_my_btn_uploading">上传食物数据</string>
+    <string name="fragment_my_btn_indent">我的订单</string>
+    <string name="activity_home_else_share">分享</string>
+    <string name="activity_home_else_collect">收藏</string>
+    <string name="activity_home_else_details">图片详情</string>
+    //字符串数组
+    <array name="homepage_tablayout_name">
+        <item> 首页 @dream@ 0 </item>
+        <item> 评测 @dream@ 1 </item>
+        <item> 知识 @dream@ 2 </item>
+        <item> 美食 @dream@ 3 </item>
+    </array>
 </resources>
