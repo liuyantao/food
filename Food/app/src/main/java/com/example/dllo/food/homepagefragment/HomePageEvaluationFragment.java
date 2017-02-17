@@ -31,7 +31,7 @@ public class HomePageEvaluationFragment extends BaseFragment {
     public static final String url = "http://food.boohee.com/fb/v1/feeds/category_feed?page=1&category=2&per=10";
     private List<HomePageEvaluationBean.FeedsBean> datas;
     private HomePageEvaluationAdapter homePageEvaluationAdapter;
-    private HomePageEvaluationBean homePageEvaluationBean;
+
     private Handler handler = new Handler(Looper.getMainLooper());
     @Override
     public int setLayout() {
@@ -48,6 +48,8 @@ public class HomePageEvaluationFragment extends BaseFragment {
 
     @Override
     public void initData() {
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(manager);
         NextTool.getInstance().startRequest(url, HomePageEvaluationBean.class, new CallBack<HomePageEvaluationBean>() {
             @Override
             public void onSuccess(HomePageEvaluationBean response) {
