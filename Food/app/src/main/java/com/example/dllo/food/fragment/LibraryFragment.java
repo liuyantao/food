@@ -1,6 +1,5 @@
 package com.example.dllo.food.fragment;
 
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RadioButton;
@@ -9,9 +8,9 @@ import com.example.dllo.food.R;
 import com.example.dllo.food.adapter.homeadapter.LibraryAdapter;
 import com.example.dllo.food.adapter.homeadapter.BrandLibraryAdapter;
 import com.example.dllo.food.adapter.homeadapter.ShopLibraryAdapter;
+import com.example.dllo.food.base.BaseFragment;
 import com.example.dllo.food.bean.CateGoriesBean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +20,7 @@ import java.util.List;
  * 　　　　 ﹏﹏﹏♥♥刘延涛✍♥♥﹏﹏
  */
   //食物百科界面的fragment
-public class LibraryFragment extends BaseFragment{
+public class LibraryFragment extends BaseFragment {
 
     private RecyclerView recyclerView, brandRecyclerView, shopRecyclerView;
     private List<CateGoriesBean.GroupBean.CategoriesBean> data, branddata, shopdata;
@@ -33,7 +32,7 @@ public class LibraryFragment extends BaseFragment{
 
     @Override
     public int setLayout() {
-        return R.layout.library_fragment;
+        return R.layout.fragment_library;
     }
 
     @Override

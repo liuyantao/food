@@ -1,4 +1,4 @@
-package com.example.dllo.food.activity;
+package com.example.dllo.food.base;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;

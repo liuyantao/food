@@ -1,4 +1,4 @@
-package com.example.dllo.food.fragment;
+package com.example.dllo.food.base;
 
 import android.content.Context;
 import android.os.Bundle;

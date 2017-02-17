@@ -1,13 +1,9 @@
 package com.example.dllo.food.fragment;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.dllo.food.R;
+import com.example.dllo.food.base.BaseFragment;
 
 /**
  * ✎﹏﹏﹏.₯㎕*﹏﹏﹏
@@ -15,11 +11,11 @@ import com.example.dllo.food.R;
  * 　　　　换了浅斟低唱。
  * 　　　　 ﹏﹏﹏♥♥刘延涛✍♥♥﹏﹏
  */
-public class MyFragment extends BaseFragment{
+public class MyFragment extends BaseFragment {
 
     @Override
     public int setLayout() {
-        return R.layout.my_fragment;
+        return R.layout.fragment_my;
     }
 
     @Override

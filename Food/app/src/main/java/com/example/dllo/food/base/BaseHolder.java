@@ -1,4 +1,4 @@
-package com.example.dllo.food.util;
+package com.example.dllo.food.base;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -86,4 +86,6 @@ public class BaseHolder extends RecyclerView.ViewHolder{
         }
         return this;
     }
+
+
 }

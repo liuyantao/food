@@ -34,7 +34,7 @@ public class BrandLibraryAdapter extends RecyclerView.Adapter<BrandLibraryAdapte
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(context).inflate(R.layout.library_item, parent, false);
+        View itemView = LayoutInflater.from(context).inflate(R.layout.item_library, parent, false);
         // 创建内部类
         MyViewHolder holder = new MyViewHolder(itemView);
         return holder;
@@ -46,6 +46,7 @@ public class BrandLibraryAdapter extends RecyclerView.Adapter<BrandLibraryAdapte
 
     }
 
+   // 定义item有几个的方法
     @Override
     public int getItemCount() {
         return datas != null ? datas .size() : 0;

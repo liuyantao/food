@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/fragment_my_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/fragment_my_iv"
+        android:background="@mipmap/img_my_bg" />
+
+    <TextView
+        android:id="@+id/fragment_my_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/fragment_my_tv"
+        android:text="我的"
+        android:textColor="@color/library_query_tv" />
+
+    <ImageButton
+        android:id="@+id/fragment_my_imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/fragment_home_tv"
+        android:layout_marginTop="@dimen/library_fragment_marginBottom_food"
+        android:background="@mipmap/ic_my_setting" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/fragment_my_tv"
+
+        />
+    <Button
+        android:id="@+id/fragment_my_button"
+        android:layout_width="@dimen/library_fragment_linearlayout_height"
+        android:layout_height="@dimen/fragment_my_btn_register"
+        android:layout_marginTop="80dp"
+
+
+        android:gravity="center"
+        android:text="@string/fragment_my_btn_register"
+        android:textColor="@color/library_query_tv"
+        android:textSize="@dimen/library_query_tv_margin"
+        android:layout_below="@+id/fragment_my_imageButton"
+        android:layout_centerHorizontal="true" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_my_iv"
+
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/fragment_home_tv"
+        android:paddingRight="@dimen/fragment_home_iv"
+        android:showDividers="middle">
+
+        <RelativeLayout
+            android:id="@+id/fragment_my_RelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fragment_my_RelativeLayout_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fragment_my_tv"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/ic_my_photo" />
+
+            <TextView
+                android:id="@+id/fragment_my_RelativeLayout_tv"
+                android:layout_toRightOf="@+id/fragment_my_RelativeLayout_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/fragment_my_btn_photo" />
+
+            <ImageView
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/list_arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_my_RelativeLayout_collect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fragment_my_RelativeLayout_iv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fragment_my_tv"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/ic_my_collect" />
+
+            <TextView
+                android:layout_toRightOf="@+id/fragment_my_RelativeLayout_iv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/fragment_my_btn_collect" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/list_arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_my_RelativeLayout_uploading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fragment_my_RelativeLayout_iv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fragment_my_tv"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/ic_my_upload" />
+
+            <TextView
+                android:layout_toRightOf="@+id/fragment_my_RelativeLayout_iv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/fragment_my_btn_uploading" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/list_arrow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_my_RelativeLayout_indent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/fragment_my_RelativeLayout_iv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fragment_my_tv"
+                android:layout_alignParentLeft="true"
+                android:src="@mipmap/ic_my_order" />
+
+            <TextView
+                android:layout_toRightOf="@id/fragment_my_RelativeLayout_iv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="@string/fragment_my_btn_indent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/list_arrow" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

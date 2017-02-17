@@ -1,23 +1,18 @@
 package com.example.dllo.food.homepagefragment;
 
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.app.Fragment;
-import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.bumptech.glide.Glide;
 import com.example.dllo.food.R;
 import com.example.dllo.food.adapter.HomePageEvaluationAdapter;
 import com.example.dllo.food.bean.HomePageEvaluationBean;
-import com.example.dllo.food.fragment.BaseFragment;
+import com.example.dllo.food.base.BaseFragment;
 import com.example.dllo.food.util.CallBack;
 import com.example.dllo.food.util.NextTool;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,7 +30,7 @@ public class HomePageEvaluationFragment extends BaseFragment {
     private Handler handler = new Handler(Looper.getMainLooper());
     @Override
     public int setLayout() {
-        return R.layout.homepage_evaluation_fragment;
+        return R.layout.fragment_homepage_evaluation;
 
     }
 

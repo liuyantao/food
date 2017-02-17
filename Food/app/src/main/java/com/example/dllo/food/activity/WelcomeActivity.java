@@ -1,10 +1,10 @@
 package com.example.dllo.food.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.CountDownTimer;
 
 import com.example.dllo.food.R;
+import com.example.dllo.food.base.BaseActivity;
 
 /**
  * ✎﹏﹏﹏.₯㎕*﹏﹏﹏
@@ -37,6 +37,7 @@ public class WelcomeActivity extends BaseActivity {
             @Override
             public void onFinish() {
                 MyJump();
+
             }
         }.start();
 

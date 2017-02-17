@@ -1,23 +1,19 @@
 package com.example.dllo.food.fragment;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.dllo.food.R;
 import com.example.dllo.food.adapter.HomePageAdapter;
+import com.example.dllo.food.base.BaseFragment;
 import com.example.dllo.food.homepagefragment.HomePageEvaluationFragment;
 import com.example.dllo.food.homepagefragment.HomePageFoodFragment;
 import com.example.dllo.food.homepagefragment.HomePageHomeFragment;
 import com.example.dllo.food.homepagefragment.HomePageKnowledgeFragment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -28,7 +24,7 @@ import java.util.List;
  */
 
 //逛吃界面的fragment
-public class HomePageFragment extends BaseFragment{
+public class HomePageFragment extends BaseFragment {
    private String[]titles = new String[]{"首页","评测","知识","美食"};
     private List<Fragment> fragments;
 
@@ -39,7 +35,7 @@ public class HomePageFragment extends BaseFragment{
 
     @Override
     public int setLayout() {
-        return R.layout.homepage_fragment;
+        return R.layout.fragment_homepage;
 
     }
 

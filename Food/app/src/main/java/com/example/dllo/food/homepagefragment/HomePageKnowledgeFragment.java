@@ -7,11 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.dllo.food.R;
-import com.example.dllo.food.adapter.HomePageEvaluationAdapter;
 import com.example.dllo.food.adapter.HomePageKnowledgeAdapter;
-import com.example.dllo.food.bean.HomePageEvaluationBean;
 import com.example.dllo.food.bean.HomePageKnowledgeBean;
-import com.example.dllo.food.fragment.BaseFragment;
+import com.example.dllo.food.base.BaseFragment;
 import com.example.dllo.food.util.CallBack;
 import com.example.dllo.food.util.NextTool;
 
@@ -34,26 +32,28 @@ public class HomePageKnowledgeFragment extends BaseFragment{
     private Handler handler = new Handler(Looper.getMainLooper());
     @Override
     public int setLayout() {
-        return R.layout.homepage_knowledge_fragment;
+        return R.layout.fragment_homepage_knowledge;
 
     }
 
     @Override
     public void initView(View view) {
         recyclerView = (RecyclerView) view.findViewById(R.id.homepage_knowledge_fragment_rl);
-        home = new HomePageEvaluationAdapter(context);
-        recyclerView.setAdapter(homePageEvaluationAdapter);
+        homePageKnowledgeAdapter = new HomePageKnowledgeAdapter(context);
+        recyclerView.setAdapter(homePageKnowledgeAdapter);
     }
 
     @Override
     public void initData() {
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
-        NextTool.getInstance().startRequest(url, HomePageEvaluationBean.class, new CallBack<HomePageEvaluationBean>() {
+        NextTool.getInstance().startRequest(url, HomePageKnowledgeBean.class, new CallBack<HomePageKnowledgeBean>() {
+
+
             @Override
-            public void onSuccess(HomePageEvaluationBean response) {
+            public void onSuccess(HomePageKnowledgeBean response) {
                 datas = response.getFeeds();
-                homePageEvaluationAdapter.setDatas(datas);
+                homePageKnowledgeAdapter.setDatas(datas);
             }
 
             @Override
