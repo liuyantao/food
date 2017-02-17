@@ -11,7 +11,7 @@ public class NextTool implements NetInterFace{
     private NetInterFace mInterface;
 
     public static NextTool getInstance() {
-        //双重体验锁单例模式
+        //双重校验锁单例模式
         if (ourInstance == null){
             synchronized (NextTool.class){
                 if (ourInstance == null){

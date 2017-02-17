@@ -57,7 +57,7 @@ public class HomePageFragment extends BaseFragment {
 
 
      homePageAdapter = new
-             HomePageAdapter(getFragmentManager(),fragments);
+             HomePageAdapter(getChildFragmentManager(),fragments);
      viewPager.setAdapter(homePageAdapter);
      tabLayout.setupWithViewPager(viewPager);
      for (int i = 0; i < homePageAdapter.getCount(); i++) {

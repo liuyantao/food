@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e9f1f7"
-    android:orientation="vertical"
-   >
+    android:overScrollMode="never"
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -31,7 +32,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/library_query_tv"
             android:text="@string/query"
-            android:textColor="@color/library_query_tv"/>
+            android:textColor="@color/library_query_tv" />
 
         <RelativeLayout
             android:id="@+id/library_search_rl"
@@ -148,7 +149,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/fragment_home_tv"
                 android:layout_marginLeft="@dimen/library_query_tv_margin"
-                android:layout_marginRight="@dimen/library_query_tv_margin"/>
+                android:layout_marginRight="@dimen/library_query_tv_margin"
+                android:overScrollMode="never" />
 
         </LinearLayout>
         <!--热门品牌-->
@@ -180,7 +182,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/fragment_home_tv"
                 android:layout_marginLeft="@dimen/library_query_tv_margin"
-                android:layout_marginRight="@dimen/library_query_tv_margin"/>
+                android:layout_marginRight="@dimen/library_query_tv_margin"
+                android:overScrollMode="never" />
         </LinearLayout>
         <!--连锁餐饮-->
         <!--linearlayout嵌套recycleview-->
@@ -210,7 +213,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/fragment_home_tv"
                 android:layout_marginLeft="@dimen/library_query_tv_margin"
-                android:layout_marginRight="@dimen/library_query_tv_margin"/>
+                android:layout_marginRight="@dimen/library_query_tv_margin"
+                android:overScrollMode="never" />
 
         </LinearLayout>
 

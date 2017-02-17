@@ -25,27 +25,20 @@
         android:layout_marginRight="@dimen/fragment_home_tv"
         android:layout_marginTop="@dimen/library_fragment_marginBottom_food"
         android:background="@mipmap/ic_my_setting" />
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/fragment_my_tv"
 
-        />
-    <Button
+    <TextView
         android:id="@+id/fragment_my_button"
         android:layout_width="@dimen/library_fragment_linearlayout_height"
         android:layout_height="@dimen/fragment_my_btn_register"
         android:layout_marginTop="80dp"
-
-
         android:gravity="center"
-        android:text="@string/fragment_my_btn_register"
+        android:text="点击登录"
+        android:background="@drawable/my_login"
         android:textColor="@color/library_query_tv"
         android:textSize="@dimen/library_query_tv_margin"
         android:layout_below="@+id/fragment_my_imageButton"
         android:layout_centerHorizontal="true" />
-
+    <!--android:text="@string/fragment_my_btn_register"-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -170,6 +163,15 @@
                 android:src="@mipmap/list_arrow" />
         </RelativeLayout>
     </LinearLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/img_default_avatar"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/fragment_my_imageButton"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
