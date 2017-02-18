@@ -49,6 +49,7 @@ public class HomePageHomeAdapter extends RecyclerView.Adapter<BaseHolder>{
 //        ViewGroup.LayoutParams params = holder.getView().getLayoutParams();
 //        params.height = heights.get(position);
 //        holder.getView().setLayoutParams(params);
+
         holder.setImage(R.id.homepage_home_item_iv ,datas .get(position).getCard_image() );
         holder.setText(R.id.homepage_home_item_title,datas.get(position).getTitle());
         holder.setText(R.id.homepage_home_item_author_tv,datas.get(position).getPublisher());
