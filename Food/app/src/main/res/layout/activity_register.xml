@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+ <RelativeLayout
+     android:id="@+id/activity_register_relativeLayout"
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:background="@color/library_query_tv">
+
+
+     <Button
+         android:id="@+id/activity_register_tv"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_centerVertical="true"
+        android:drawableLeft="@mipmap/ic_back_dark_center"
+         android:text="登录"
+         android:background="#ffffff"
+         android:textSize="18dp"/>
+
+ </RelativeLayout>
+    <TextView
+        android:id="@+id/activity_register_textView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/activity_register_relativeLayout"
+        android:background="@color/fragment_home_tv"
+        />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/activity_register_textView"
+    android:background="@color/scrollview">
+    <TextView
+        android:id="@+id/activity_register_first_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="不用注册,用以下账号直接登录"
+        android:textColor="@color/fragment_home_tv"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_register_first_textView"
+        >
+        <ImageView
+            android:id="@+id/register_qq"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_login_qq"/>
+        <ImageView
+            android:id="@+id/register_wechat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_login_wechat"/>
+        <ImageView
+            android:id="@+id/register_weibo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_login_weibo"/>
+        <ImageView
+            android:id="@+id/register_boohee"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_login_boohee"/>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+        android:background="@mipmap/img_tomato_bread"/>
+</RelativeLayout>
+
+</RelativeLayout>

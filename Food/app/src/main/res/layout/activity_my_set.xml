@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_set"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.dllo.food.activity.SetActivity">
+
+    <TextView
+        android:id="@+id/activity_my_set_first_textView"
+        android:layout_width="match_parent"
+        android:layout_height="0.6dp"
+        android:layout_below="@+id/activity_my_set_relativeLayout"
+        android:background="@color/fragment_home_tv" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f6f6f6"
+        android:layout_below="@+id/activity_my_set_first_textView">
+
+
+        <RelativeLayout
+            android:id="@+id/activity_my_set_clean_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="清除缓存" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/list_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/activity_my_set_two_textView"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_below="@+id/activity_my_set_clean_relativeLayout"
+            android:background="@color/fragment_home_tv" />
+
+        <RelativeLayout
+            android:id="@+id/activity_my_set_propose_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/activity_my_set_two_textView">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="给我们提个建议" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/list_arrow" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/activity_my_set_three_textView"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_below="@+id/activity_my_set_propose_relativeLayout"
+            android:background="@color/fragment_home_tv" />
+
+        <RelativeLayout
+            android:id="@+id/activity_my_set_grade_relativeLayout"
+            android:layout_below="@+id/activity_my_set_three_textView"
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评个分吧"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/list_arrow"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/activity_my_set_four_textView"
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_below="@+id/activity_my_set_grade_relativeLayout"
+            android:background="@color/fragment_home_tv" />
+
+        <RelativeLayout
+            android:id="@+id/activity_my_set_share_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/activity_my_set_four_textView">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="将食物派分享给朋友"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/list_arrow"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"/>
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.6dp"
+            android:layout_below="@+id/activity_my_set_share_relativeLayout"
+            android:background="@color/fragment_home_tv" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="食物派 版本号 : V2.6"
+            android:textColor="@color/fragment_home_tv"
+            android:textSize="12dp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/activity_my_set_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/library_query_tv"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/activity_my_set_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/ic_back_dark_center"
+            android:text="设置"
+            android:background="#ffffff"
+            android:textSize="18dp"/>
+
+    </RelativeLayout>
+</RelativeLayout>

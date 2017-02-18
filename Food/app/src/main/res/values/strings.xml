@@ -23,9 +23,9 @@
     <string name="activity_home_else_details">图片详情</string>
     //字符串数组
     <array name="homepage_tablayout_name">
-        <item> 首页 @dream@ 0 </item>
-        <item> 评测 @dream@ 1 </item>
-        <item> 知识 @dream@ 2 </item>
-        <item> 美食 @dream@ 3 </item>
+        <item>首页 @dream@ 0</item>
+        <item>评测 @dream@ 1</item>
+        <item>知识 @dream@ 2</item>
+        <item>美食 @dream@ 3</item>
     </array>
 </resources>

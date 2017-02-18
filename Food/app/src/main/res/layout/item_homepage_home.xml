@@ -46,6 +46,13 @@
         android:background="@color/library_query_tv"
         android:gravity="center_vertical">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/item_home_first_photo_imageview"
+            android:layout_marginLeft="@dimen/fragment_home_iv"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/library_fragment_marginBottom_food"
+            android:layout_width="@dimen/fragment_library_logo_iv_height"
+            android:layout_height="@dimen/fragment_library_logo_iv_height" />
         <TextView
             android:id="@+id/homepage_home_item_author_tv"
             android:layout_width="wrap_content"

@@ -26,7 +26,7 @@
         android:layout_marginTop="@dimen/library_fragment_marginBottom_food"
         android:background="@mipmap/ic_my_setting" />
 
-    <TextView
+    <Button
         android:id="@+id/fragment_my_button"
         android:layout_width="@dimen/library_fragment_linearlayout_height"
         android:layout_height="@dimen/fragment_my_btn_register"

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
-    android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_width="wrap_content"
+    android:layout_height="220dp"
 
     >
     <ImageView
         android:id="@+id/homepage_evaluation_iv"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@color/library_query_tv"/>
@@ -16,7 +19,8 @@
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
     android:text="@string/homepage"
-    android:textSize="15dp"
+    android:textColor="@color/library_query_tv"
+    android:textSize="10dp"
     android:layout_marginTop="30dp"
 
    />
@@ -25,8 +29,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/library"
+        android:textColor="@color/library_query_tv"
         android:layout_centerInParent="true"
-        android:textSize="20dp"
+        android:textSize="15dp"
        />
    <TextView
        android:id="@+id/homepage_evaluation_read"
@@ -34,9 +39,10 @@
        android:layout_height="wrap_content"
        android:layout_alignParentBottom="true"
        android:text="@string/my"
+       android:textColor="@color/library_query_tv"
        android:layout_centerHorizontal="true"
        android:layout_marginBottom="30dp"
-       android:textSize="15dp"
+       android:textSize="10dp"
        />
 
 </RelativeLayout>
