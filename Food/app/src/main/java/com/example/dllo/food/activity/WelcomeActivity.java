@@ -36,19 +36,17 @@ public class WelcomeActivity extends BaseActivity {
 
             @Override
             public void onFinish() {
-                MyJump();
+                Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
+                startActivity(intent);
+               finish();
+
 
             }
         }.start();
 
 
     }
-    public void MyJump(){
-        Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
-        startActivity(intent);
-        countDownTimer.cancel();
 
-    }
 
     @Override
     protected void bindEvent() {
