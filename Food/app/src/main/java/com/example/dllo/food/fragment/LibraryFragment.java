@@ -1,5 +1,6 @@
 package com.example.dllo.food.fragment;
 
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -7,6 +8,8 @@ import android.view.View;
 import android.widget.RadioButton;
 
 import com.example.dllo.food.R;
+import com.example.dllo.food.activity.RegisterActivity;
+import com.example.dllo.food.activity.homepageactivity.HomePageEvaluationNextActivity;
 import com.example.dllo.food.adapter.homeadapter.LibraryAdapter;
 import com.example.dllo.food.adapter.homeadapter.BrandLibraryAdapter;
 import com.example.dllo.food.adapter.homeadapter.ShopLibraryAdapter;
@@ -14,8 +17,7 @@ import com.example.dllo.food.base.BaseFragment;
 import com.example.dllo.food.bean.CateGoriesBean;
 import com.example.dllo.food.util.CallBack;
 import com.example.dllo.food.util.NextTool;
-
-import java.util.List;
+import com.example.dllo.food.util.OnRecycleViewItemClick;
 
 /**
  * ✎﹏﹏﹏.₯㎕*﹏﹏﹏
@@ -24,17 +26,16 @@ import java.util.List;
  * 　　　　 ﹏﹏﹏♥♥刘延涛✍♥♥﹏﹏
  */
 //食物百科界面的fragment
-public class LibraryFragment extends BaseFragment {
+public class LibraryFragment extends BaseFragment implements OnRecycleViewItemClick, View.OnClickListener {
 
     public static final String LIBRARY_URL = "http://food.boohee.com/fb/v1/categories/list";
 
     private RecyclerView recyclerView, brandRecyclerView, shopRecyclerView;
-    private List<CateGoriesBean.GroupBean.CategoriesBean> data, branddata, shopdata;
+    private RadioButton analyzeRadioButton,seachradioButton,scanRadioButton;
     private LibraryAdapter libraryAdapter;
     private BrandLibraryAdapter brandLibraryAdapter;
     private ShopLibraryAdapter shopLibraryAdapter;
-//    public static final int CATEGORIES_REQUESTCODE = 1;
-//    private RadioButton radioButton, analyzeRadioButton, scanRadioButton;
+
 
     @Override
     public int setLayout() {
@@ -43,40 +44,57 @@ public class LibraryFragment extends BaseFragment {
 
     @Override
     public void initView(View view) {
+        //绑定recyclerView
         recyclerView = (RecyclerView) view.findViewById(R.id.library_fragment_recyclerviewlibrary);
         brandRecyclerView = (RecyclerView) view.findViewById(R.id.library_fragment_recyclerviewbrand);
         shopRecyclerView = (RecyclerView) view.findViewById(R.id.library_fragment_recyclerviewshop);
+        analyzeRadioButton = (RadioButton) view.findViewById(R.id.framgent_library_analyzeRadioButton);
+        seachradioButton = (RadioButton) view.findViewById(R.id.framgent_library_seachradioButton);
+        scanRadioButton = (RadioButton) view.findViewById(R.id.library_fragment_scanRadioButton);
+        analyzeRadioButton.setOnClickListener(this);
     }
 
     @Override
     public void initData() {
 
         init();
-
+        //libraryAdapter的RecycleView
+        //设置recycleView的样式 网格式布局
         libraryAdapter = new LibraryAdapter(context);
         GridLayoutManager libraryManger = new GridLayoutManager(context, 3);
         libraryManger.setOrientation(GridLayoutManager.VERTICAL);
+        //初始化适配器
         recyclerView.setLayoutManager(libraryManger);
         recyclerView.setAdapter(libraryAdapter);
+        //添加监听事件
+        libraryAdapter.setOnRecycleViewItemClick(this);
 
 
         // brandLibraryAdapter 的 RecyclerView
+        //设置recycleView的样式 网格式布局
         brandLibraryAdapter = new BrandLibraryAdapter(context);
         GridLayoutManager brandManager = new GridLayoutManager(context, 3);
         brandManager.setOrientation(GridLayoutManager.VERTICAL);
+        //初始化适配器
         brandRecyclerView.setLayoutManager(brandManager);
         brandRecyclerView.setAdapter(brandLibraryAdapter);
+        //添加监听事件
+        brandLibraryAdapter.setOnRecycleViewItemClick(this);
 
         // shopLibrayAdapter 的 RecyclerView
+        //设置recycleView的样式 网格式布局
         shopLibraryAdapter = new ShopLibraryAdapter(context);
         GridLayoutManager shopManager = new GridLayoutManager(context, 3);
         shopManager.setOrientation(GridLayoutManager.VERTICAL);
+        //初始化适配器
         shopRecyclerView.setLayoutManager(shopManager);
         shopRecyclerView.setAdapter(shopLibraryAdapter);
-
-
+        //添加监听事件
+        shopLibraryAdapter.setOnRecycleViewItemClick(this);
 
     }
+
+
 
     private void init() {
         NextTool.getInstance().startRequest(LIBRARY_URL, CateGoriesBean.class, new CallBack<CateGoriesBean>() {
@@ -85,6 +103,8 @@ public class LibraryFragment extends BaseFragment {
                 //遍历集合
                 for (CateGoriesBean.GroupBean groupBean : response.getGroup()) {
                     switch (groupBean.getKind()) {
+                        //找到对应的数据添加到适配器
+
                         case "group":
                             libraryAdapter.setDatas(groupBean.getCategories());
                             break;
@@ -103,5 +123,30 @@ public class LibraryFragment extends BaseFragment {
                 Log.d("LibraryFragment", "首页食物百科请求异常" + e.getMessage());
             }
         });
+    }
+
+    @Override
+    public void Onclick(int position) {
+        Intent intent = new Intent(getActivity(), HomePageEvaluationNextActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View view) {
+      switch (view.getId()){
+          case R.id.framgent_library_analyzeRadioButton:
+              Intent intent = new Intent(getActivity(), RegisterActivity.class);
+              startActivity(intent);
+            break;
+          case R.id.framgent_library_seachradioButton:
+              Intent intent1 = new Intent();
+              intent1.setAction("android.media.action.IMAGE_CAPTUER");
+              intent1.addCategory("android.intent.category.DEFAULT");
+              startActivity(intent1);
+              break;
+          case R.id.library_fragment_scanRadioButton:
+              break;
+
+      }
     }
 }

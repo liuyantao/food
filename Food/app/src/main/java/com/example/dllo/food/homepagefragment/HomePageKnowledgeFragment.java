@@ -1,17 +1,21 @@
 package com.example.dllo.food.homepagefragment;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.dllo.food.R;
+import com.example.dllo.food.activity.homepageactivity.HomePageEvaluationNextActivity;
 import com.example.dllo.food.adapter.HomePageKnowledgeAdapter;
 import com.example.dllo.food.bean.HomePageKnowledgeBean;
 import com.example.dllo.food.base.BaseFragment;
 import com.example.dllo.food.util.CallBack;
 import com.example.dllo.food.util.NextTool;
+import com.example.dllo.food.util.OnRecycleViewItemClick;
 
 import java.util.List;
 
@@ -47,6 +51,15 @@ public class HomePageKnowledgeFragment extends BaseFragment{
     public void initData() {
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
+        homePageKnowledgeAdapter.setOnRecycleViewItemClick(new OnRecycleViewItemClick() {
+            @Override
+            public void Onclick(int position) {
+                Intent intent = new Intent(getActivity(), HomePageEvaluationNextActivity.class);
+                String link  = datas.get(position).getLink();
+                intent.putExtra("NextActivity",link);
+                startActivity(intent);
+            }
+        });
         NextTool.getInstance().startRequest(url, HomePageKnowledgeBean.class, new CallBack<HomePageKnowledgeBean>() {
 
 

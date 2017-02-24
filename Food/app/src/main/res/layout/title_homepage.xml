@@ -6,18 +6,33 @@
 <TextView
     android:id="@+id/homepage_title_tv"
     android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
     android:gravity="center"
+    android:layout_marginTop="10dp"
+    android:textSize="20dp"
     android:text="@string/homepage_title"
+
+
     />
     <ImageButton
         android:id="@+id/homepage_title_ib"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:background="@null"
+        android:background="@mipmap/ic_home_camera"
         android:scaleType="center"
-        android:src="@mipmap/ic_home_camera"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="10dp"
+
+        android:layout_alignParentRight="true"
+
+        />
+    <TextView
+        android:id="@+id/fragment_home_textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/homepage_title_tv"
+        android:layout_marginTop="@dimen/fragment_home_tv"
+        android:background="@color/fragment_home_tv" />
+
 </RelativeLayout>

@@ -58,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/item_home_first_photo_imageview"
             android:layout_marginLeft="@dimen/item_home_first_textview"
             android:textSize="@dimen/fragment_home_iv" />
 

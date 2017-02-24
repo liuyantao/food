@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="0.8"
+    android:background="#ffffff">
+    <Button
+        android:id="@+id/activity_homepage_home_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:drawableLeft="@mipmap/ic_back_dark_center"
+        android:text="图片详情"
+        android:background="#ffffff"
+        android:textSize="18dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@mipmap/ic_photo_share"
+        />
+
+</RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/activity_homepage_home_next_ci"
+                android:layout_width="@dimen/library_query_tv"
+                android:layout_height="@dimen/library_query_tv"
+                android:layout_margin="@dimen/fragment_home_iv"/>
+            <TextView
+                android:id="@+id/activity_homepage_home_next_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/activity_homepage_home_next_ci"/>
+
+              <ImageView
+                  android:id="@+id/activity_homepage_home_next_iv"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/activity_homepage_home_next_tv"
+                  android:scaleType="fitStart"
+                  />
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fragment_home_tv"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fragment_home_tv" />
+
+    <RelativeLayout
+        android:id="@+id/activity_homepage_home_next_rl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_photo_agree"
+            android:id="@+id/activity_home_first_hand_photo_iv"/>
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/activity_home_first_number_tv"
+            android:layout_toRightOf="@+id/activity_home_first_hand_photo_iv"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

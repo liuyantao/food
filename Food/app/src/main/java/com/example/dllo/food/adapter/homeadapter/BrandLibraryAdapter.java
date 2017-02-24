@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.dllo.food.R;
 import com.example.dllo.food.base.BaseHolder;
 import com.example.dllo.food.bean.CateGoriesBean;
+import com.example.dllo.food.util.OnRecycleViewItemClick;
 
 import java.util.List;
 
@@ -22,11 +23,16 @@ import java.util.List;
  */
 public class BrandLibraryAdapter extends RecyclerView.Adapter<BaseHolder>{
    private Context context;
-    private List<CateGoriesBean.GroupBean.CategoriesBean>  datas;
+    private OnRecycleViewItemClick mOnRecycleViewItemClick;
+    private List<CateGoriesBean.GroupBean.CategoriesBean>  data;
 
-    public void setDatas(List<CateGoriesBean.GroupBean.CategoriesBean> datas) {
-        this.datas = datas;
+    public void setDatas(List<CateGoriesBean.GroupBean.CategoriesBean> data) {
+        this.data = data;
         notifyDataSetChanged();
+    }
+
+    public void setOnRecycleViewItemClick(OnRecycleViewItemClick onRecycleViewItemClick) {
+        mOnRecycleViewItemClick = onRecycleViewItemClick;
     }
 
     public BrandLibraryAdapter(Context context) {
@@ -39,14 +45,21 @@ public class BrandLibraryAdapter extends RecyclerView.Adapter<BaseHolder>{
     }
 
     @Override
-    public void onBindViewHolder(BaseHolder holder, int position) {
-      holder.setImage(R.id.library_fragment_IV,datas.get(position).getImage_url());
-        holder.setText(R.id.item_showtv,datas.get(position).getName());
+    public void onBindViewHolder(BaseHolder holder, final int position) {
+      holder.setImage(R.id.library_fragment_IV,data.get(position).getImage_url());
+        holder.setText(R.id.item_showtv,data.get(position).getName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             mOnRecycleViewItemClick.Onclick(position);
+            }
+        });
+        holder.itemView.setTag(data);
     }
 
     @Override
     public int getItemCount() {
-        return datas != null ? datas.size() : 0;
+        return data != null ? data.size() : 0;
     }
 
 //    @Override
