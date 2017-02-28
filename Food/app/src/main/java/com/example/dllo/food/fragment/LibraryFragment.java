@@ -1,6 +1,7 @@
 package com.example.dllo.food.fragment;
 
 import android.content.Intent;
+import android.provider.MediaStore;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.widget.RadioButton;
 
 import com.example.dllo.food.R;
+import com.example.dllo.food.activity.LibraryNextActivity;
+import com.example.dllo.food.activity.LibrarySearchActivity;
 import com.example.dllo.food.activity.RegisterActivity;
 import com.example.dllo.food.activity.homepageactivity.HomePageEvaluationNextActivity;
 import com.example.dllo.food.adapter.homeadapter.LibraryAdapter;
@@ -31,7 +34,7 @@ public class LibraryFragment extends BaseFragment implements OnRecycleViewItemCl
     public static final String LIBRARY_URL = "http://food.boohee.com/fb/v1/categories/list";
 
     private RecyclerView recyclerView, brandRecyclerView, shopRecyclerView;
-    private RadioButton analyzeRadioButton,seachradioButton,scanRadioButton;
+    private RadioButton analyzeRadioButton, seachRadioButton, scanRadioButton;
     private LibraryAdapter libraryAdapter;
     private BrandLibraryAdapter brandLibraryAdapter;
     private ShopLibraryAdapter shopLibraryAdapter;
@@ -49,9 +52,11 @@ public class LibraryFragment extends BaseFragment implements OnRecycleViewItemCl
         brandRecyclerView = (RecyclerView) view.findViewById(R.id.library_fragment_recyclerviewbrand);
         shopRecyclerView = (RecyclerView) view.findViewById(R.id.library_fragment_recyclerviewshop);
         analyzeRadioButton = (RadioButton) view.findViewById(R.id.framgent_library_analyzeRadioButton);
-        seachradioButton = (RadioButton) view.findViewById(R.id.framgent_library_seachradioButton);
-        scanRadioButton = (RadioButton) view.findViewById(R.id.library_fragment_scanRadioButton);
+        seachRadioButton = (RadioButton) view.findViewById(R.id.framgent_library_seachRadioButton);
+        scanRadioButton = (RadioButton) view.findViewById(R.id.fragment_library_scanRadioButton);
         analyzeRadioButton.setOnClickListener(this);
+        seachRadioButton.setOnClickListener(this);
+        scanRadioButton.setOnClickListener(this);
     }
 
     @Override
@@ -95,7 +100,6 @@ public class LibraryFragment extends BaseFragment implements OnRecycleViewItemCl
     }
 
 
-
     private void init() {
         NextTool.getInstance().startRequest(LIBRARY_URL, CateGoriesBean.class, new CallBack<CateGoriesBean>() {
             @Override
@@ -127,26 +131,31 @@ public class LibraryFragment extends BaseFragment implements OnRecycleViewItemCl
 
     @Override
     public void Onclick(int position) {
-        Intent intent = new Intent(getActivity(), HomePageEvaluationNextActivity.class);
+        Intent intent = new Intent(getActivity(), LibraryNextActivity.class);
+
         startActivity(intent);
     }
 
     @Override
     public void onClick(View view) {
-      switch (view.getId()){
-          case R.id.framgent_library_analyzeRadioButton:
-              Intent intent = new Intent(getActivity(), RegisterActivity.class);
-              startActivity(intent);
-            break;
-          case R.id.framgent_library_seachradioButton:
-              Intent intent1 = new Intent();
-              intent1.setAction("android.media.action.IMAGE_CAPTUER");
-              intent1.addCategory("android.intent.category.DEFAULT");
-              startActivity(intent1);
-              break;
-          case R.id.library_fragment_scanRadioButton:
-              break;
+        switch (view.getId()) {
+            case R.id.framgent_library_analyzeRadioButton:
+                Intent intent = new Intent(getActivity(), RegisterActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.framgent_library_seachRadioButton:
+                Intent intent1 = new Intent(getActivity(), LibrarySearchActivity.class);
+                startActivity(intent1);
 
-      }
+                break;
+            case R.id.fragment_library_scanRadioButton:
+
+                Intent intent2 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+
+                startActivity(intent2);
+                break;
+
+        }
     }
 }

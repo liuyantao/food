@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_library_search"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dllo.food.activity.LibrarySearchActivity">
+
+    <RelativeLayout
+        android:id="@+id/activity_library_search_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/library_query_tv">
+
+
+        <Button
+            android:id="@+id/activity_library_search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/ic_back_dark_center"
+            android:text="登录"
+            android:background="#ffffff"
+            android:textSize="18dp"/>
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/activity_library_search_textView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/activity_register_relativeLayout"
+        android:background="@color/fragment_home_tv"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_below="@+id/activity_library_search_relativeLayout"
+        android:background="@color/scrollview">
+        <ImageView
+            android:id="@+id/activity_library_search_vs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_library_vs"
+            android:layout_margin="20dp"
+            android:layout_centerInParent="true"/>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/img_compare_add"
+            android:layout_toLeftOf="@+id/activity_library_search_vs"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/img_compare_add"
+            android:layout_toRightOf="@+id/activity_library_search_vs"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="营养元素"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

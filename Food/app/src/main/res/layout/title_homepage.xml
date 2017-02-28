@@ -30,7 +30,7 @@
     <TextView
         android:id="@+id/fragment_home_textView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="1dp"
         android:layout_below="@+id/homepage_title_tv"
         android:layout_marginTop="@dimen/fragment_home_tv"
         android:background="@color/fragment_home_tv" />

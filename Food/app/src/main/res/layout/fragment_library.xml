@@ -93,7 +93,7 @@
                 android:background="@color/library_fragment_color_food_background" />
 
             <RadioButton
-                android:id="@+id/framgent_library_seachradioButton"
+                android:id="@+id/framgent_library_seachRadioButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -111,7 +111,7 @@
                 android:background="@color/library_fragment_color_food_background" />
 
             <RadioButton
-                android:id="@+id/library_fragment_scanRadioButton"
+                android:id="@+id/fragment_library_scanRadioButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
