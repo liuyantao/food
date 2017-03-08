@@ -17,7 +17,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f6f6f6"
+        android:background="@color/activity_my"
         android:layout_below="@+id/activity_my_set_first_textView">
 
 
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/fragment_home_tv"
                 android:text="清除缓存" />
 
             <ImageView
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="@dimen/fragment_home_tv"
                 android:src="@mipmap/list_arrow" />
         </RelativeLayout>
 
@@ -52,14 +52,14 @@
         <RelativeLayout
             android:id="@+id/activity_my_set_propose_relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/layout_marginTop"
             android:layout_below="@+id/activity_my_set_two_textView">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/fragment_home_tv"
                 android:text="给我们提个建议" />
 
             <ImageView
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="@dimen/fragment_home_tv"
                 android:src="@mipmap/list_arrow" />
         </RelativeLayout>
 
@@ -82,20 +82,20 @@
             android:id="@+id/activity_my_set_grade_relativeLayout"
             android:layout_below="@+id/activity_my_set_three_textView"
             android:layout_width="match_parent"
-            android:layout_height="35dp">
+            android:layout_height="@dimen/layout_marginTop">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="评个分吧"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="@dimen/fragment_home_tv"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/list_arrow"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="@dimen/fragment_home_tv"/>
         </RelativeLayout>
 
         <TextView
@@ -108,21 +108,21 @@
         <RelativeLayout
             android:id="@+id/activity_my_set_share_relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="@dimen/layout_marginTop"
             android:layout_below="@+id/activity_my_set_four_textView">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="将食物派分享给朋友"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="@dimen/fragment_home_tv"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/list_arrow"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="@dimen/fragment_home_tv"/>
 
         </RelativeLayout>
         <TextView
@@ -154,7 +154,7 @@
             android:layout_centerVertical="true"
             android:drawableLeft="@mipmap/ic_back_dark_center"
             android:text="设置"
-            android:background="#ffffff"
+            android:background="@color/library_query_tv"
             android:textSize="18dp"/>
 
     </RelativeLayout>

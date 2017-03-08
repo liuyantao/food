@@ -2,16 +2,14 @@ package com.example.dllo.food.adapter.homeadapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.dllo.food.R;
 import com.example.dllo.food.base.BaseHolder;
 import com.example.dllo.food.bean.CateGoriesBean;
-import com.example.dllo.food.util.OnRecycleViewItemClick;
+import com.example.dllo.food.util.LibraryRecycleViewItemClick;
 
 import java.util.List;
 
@@ -23,7 +21,7 @@ import java.util.List;
  */
 public class BrandLibraryAdapter extends RecyclerView.Adapter<BaseHolder>{
    private Context context;
-    private OnRecycleViewItemClick mOnRecycleViewItemClick;
+    private LibraryRecycleViewItemClick mOnRecycleViewItemClick;
     private List<CateGoriesBean.GroupBean.CategoriesBean>  data;
 
     public void setDatas(List<CateGoriesBean.GroupBean.CategoriesBean> data) {
@@ -31,8 +29,9 @@ public class BrandLibraryAdapter extends RecyclerView.Adapter<BaseHolder>{
         notifyDataSetChanged();
     }
 
-    public void setOnRecycleViewItemClick(OnRecycleViewItemClick onRecycleViewItemClick) {
+    public void setOnRecycleViewItemClick(LibraryRecycleViewItemClick onRecycleViewItemClick) {
         mOnRecycleViewItemClick = onRecycleViewItemClick;
+        notifyDataSetChanged();
     }
 
     public BrandLibraryAdapter(Context context) {
@@ -47,11 +46,14 @@ public class BrandLibraryAdapter extends RecyclerView.Adapter<BaseHolder>{
     @Override
     public void onBindViewHolder(BaseHolder holder, final int position) {
       holder.setImage(R.id.library_fragment_IV,data.get(position).getImage_url());
-        holder.setText(R.id.item_showtv,data.get(position).getName());
+        final String title = data.get(position).getName();
+        holder.setText(R.id.item_showtv,title);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             mOnRecycleViewItemClick.Onclick(position);
+                mOnRecycleViewItemClick.onClick(position, title);
+
+                Log.d("BrandLibraryAdapter", "data.get(position).getId():" + data.get(position).getId());
             }
         });
         holder.itemView.setTag(data);

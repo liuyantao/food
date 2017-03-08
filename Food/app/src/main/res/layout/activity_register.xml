@@ -45,29 +45,33 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/activity_register_first_textView"
         >
-        <ImageView
+        <ImageButton
             android:id="@+id/register_qq"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#e9f1f7"
             android:src="@mipmap/ic_login_qq"/>
-        <ImageView
+        <ImageButton
             android:id="@+id/register_wechat"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#e9f1f7"
             android:src="@mipmap/ic_login_wechat"/>
-        <ImageView
+        <ImageButton
             android:id="@+id/register_weibo"
             android:layout_width="0dp"
+            android:background="#e9f1f7"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@mipmap/ic_login_weibo"/>
-        <ImageView
+        <ImageButton
             android:id="@+id/register_boohee"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="#e9f1f7"
             android:src="@mipmap/ic_login_boohee"/>
     </LinearLayout>
     <ImageView

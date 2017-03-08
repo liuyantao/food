@@ -9,7 +9,7 @@
     android:layout_height="wrap_content"
     android:layout_centerHorizontal="true"
     android:gravity="center"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="@dimen/fragment_home_tv"
     android:textSize="20dp"
     android:text="@string/homepage_title"
 
@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:background="@mipmap/ic_home_camera"
         android:scaleType="center"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="@dimen/fragment_home_iv"
+        android:layout_marginRight="@dimen/fragment_home_tv"
 
         android:layout_alignParentRight="true"
 

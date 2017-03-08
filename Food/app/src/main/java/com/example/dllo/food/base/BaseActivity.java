@@ -17,6 +17,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //绑布局
         setContentView(bindLayout());
         initView();
         initData();
@@ -24,9 +25,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    //静态方法 布局
+    //抽象方法 布局
     protected abstract int bindLayout();
-    //静态方法 绑定id
+    //抽象方法 绑定id
     protected abstract void initView();
     //写方法
     protected abstract void initData();

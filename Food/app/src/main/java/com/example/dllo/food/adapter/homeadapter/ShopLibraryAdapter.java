@@ -2,6 +2,7 @@ package com.example.dllo.food.adapter.homeadapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import com.example.dllo.food.R;
 import com.example.dllo.food.base.BaseHolder;
 import com.example.dllo.food.bean.CateGoriesBean;
+import com.example.dllo.food.util.Constant;
+import com.example.dllo.food.util.LibraryRecycleViewItemClick;
 import com.example.dllo.food.util.OnRecycleViewItemClick;
 
 import java.util.List;
@@ -20,14 +23,16 @@ import java.util.List;
  * 　　忍把浮名，
  * 　　　　换了浅斟低唱。
  * 　　　　 ﹏﹏﹏♥♥刘延涛✍♥♥﹏﹏
+ *连锁餐饮
  */
 public class ShopLibraryAdapter extends RecyclerView.Adapter<BaseHolder>{
    private Context context;
     private List<CateGoriesBean.GroupBean.CategoriesBean>  datas;
-    private OnRecycleViewItemClick mOnRecycleViewItemClick;
+    private LibraryRecycleViewItemClick mOnRecycleViewItemClick;
 
-    public void setOnRecycleViewItemClick(OnRecycleViewItemClick onRecycleViewItemClick) {
+    public void setOnRecycleViewItemClick(LibraryRecycleViewItemClick onRecycleViewItemClick) {
         mOnRecycleViewItemClick = onRecycleViewItemClick;
+        notifyDataSetChanged();
     }
 
     public void setDatas(List<CateGoriesBean.GroupBean.CategoriesBean> datas) {
@@ -45,13 +50,15 @@ public class ShopLibraryAdapter extends RecyclerView.Adapter<BaseHolder>{
     }
 
     @Override
-    public void onBindViewHolder(BaseHolder holder, final int position) {
+    public void onBindViewHolder(final BaseHolder holder, final int position) {
+        final String title = datas.get(position).getName();
       holder.setImage(R.id.library_fragment_IV,datas.get(position).getImage_url());
         holder.setText(R.id.item_showtv,datas.get(position).getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mOnRecycleViewItemClick.Onclick(position);
+                mOnRecycleViewItemClick.onClick(position,title);
+                Log.d("ShopLibraryAdapter", Constant.POPULAR + datas.get(position).getId() + Constant.ORDER + 1 + Constant.IFICATION);
             }
         });
         holder.itemView.setTag(datas);

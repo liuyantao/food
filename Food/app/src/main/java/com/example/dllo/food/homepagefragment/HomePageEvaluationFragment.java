@@ -1,6 +1,9 @@
 package com.example.dllo.food.homepagefragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -17,8 +20,12 @@ import com.example.dllo.food.base.BaseFragment;
 import com.example.dllo.food.util.CallBack;
 import com.example.dllo.food.util.NextTool;
 import com.example.dllo.food.util.OnRecycleViewItemClick;
+import com.example.dllo.food.util.Scorell;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import static android.R.id.list;
 
 /**
  * ✎﹏﹏﹏.₯㎕*﹏﹏﹏
@@ -28,6 +35,8 @@ import java.util.List;
  */
 public class HomePageEvaluationFragment extends BaseFragment {
     private RecyclerView recyclerView;
+    private int pager = 1;
+    private Receiver receiver;
     private SwipeRefreshLayout swipeRefreshLayout;
     public static final String url = "http://food.boohee.com/fb/v1/feeds/category_feed?page=1&category=2&per=10";
     private List<HomePageEvaluationBean.FeedsBean> datas;
@@ -49,6 +58,8 @@ public class HomePageEvaluationFragment extends BaseFragment {
 
     @Override
     public void initData() {
+
+        datas=new ArrayList<>();
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
         homePageEvaluationAdapter.setOnRecycleViewItemClick(new OnRecycleViewItemClick() {
@@ -56,16 +67,17 @@ public class HomePageEvaluationFragment extends BaseFragment {
             public void Onclick(int position) {
 //                Toast.makeText(context, "点击事件 --- " + position, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), HomePageEvaluationNextActivity.class);
-               String link = datas.get(position).getLink();
-                intent.putExtra("NextActivity",link);
+                String link = datas.get(position).getLink();
+                intent.putExtra("NextActivity", link);
                 startActivity(intent);
             }
         });
+
         NextTool.getInstance().startRequest(url, HomePageEvaluationBean.class, new CallBack<HomePageEvaluationBean>() {
             @Override
             public void onSuccess(HomePageEvaluationBean response) {
                 datas = response.getFeeds();
-                homePageEvaluationAdapter.setDatas(datas);
+                homePageEvaluationAdapter.setDatas(response.getFeeds());
             }
 
             @Override
@@ -75,6 +87,39 @@ public class HomePageEvaluationFragment extends BaseFragment {
 
 
         });
+        Scorell scorell = new Scorell(recyclerView, getContext());
+
+        scorell.load();
+        IntentFilter intentFilter = new IntentFilter("LOADING");
+        receiver = new Receiver();
+        getContext().registerReceiver(receiver, intentFilter);
+    }
+        class Receiver extends BroadcastReceiver {
+
+
+            @Override
+            public void onReceive(Context context, Intent intent) {
+
+                pager++;
+                final String url1 = "http://food.boohee.com/fb/v1/feeds/category_feed?page="+pager+"&category=3&per=10";
+
+                NextTool.getInstance().startRequest(url1, HomePageEvaluationBean.class, new CallBack<HomePageEvaluationBean>() {
+
+                    @Override
+                    public void onSuccess(HomePageEvaluationBean respomse) {
+
+                        datas.addAll(respomse.getFeeds());
+                        homePageEvaluationAdapter.setDatas(datas);
+                    }
+
+                    @Override
+                    public void onError(Throwable throwable) {
+
+
+                    }
+                });
+            }
+
 
     }
 }

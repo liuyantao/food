@@ -13,4 +13,9 @@
     <color name="library_fragment_color_food">#797c7f</color>
     <color name="library_fragment_color_food_background">#e3e5e7</color>
     <color name="item_showtv">#9e9595</color>
+    <color name="library_line">#c9c9c9</color>
+    <color name="library_next_textcolor">#ff4444</color>
+    <color name="library_next_text">#404040</color>
+    <color name="activity_my">#f6f6f6</color>
+
 </resources>

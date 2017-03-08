@@ -1,6 +1,9 @@
 package com.example.dllo.food.homepagefragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,11 +14,13 @@ import android.view.View;
 import com.example.dllo.food.R;
 import com.example.dllo.food.activity.homepageactivity.HomePageEvaluationNextActivity;
 import com.example.dllo.food.adapter.HomePageKnowledgeAdapter;
+import com.example.dllo.food.bean.HomePageFoodBean;
 import com.example.dllo.food.bean.HomePageKnowledgeBean;
 import com.example.dllo.food.base.BaseFragment;
 import com.example.dllo.food.util.CallBack;
 import com.example.dllo.food.util.NextTool;
 import com.example.dllo.food.util.OnRecycleViewItemClick;
+import com.example.dllo.food.util.Scorell;
 
 import java.util.List;
 
@@ -28,6 +33,8 @@ import java.util.List;
 public class HomePageKnowledgeFragment extends BaseFragment{
 
     private RecyclerView recyclerView;
+    private int pager = 1;
+    private Receiver receiver;
     public static final String url =
             "http://food.boohee.com/fb/v1/feeds/category_feed?page=1&category=3&per=10";
     private List<HomePageKnowledgeBean.FeedsBean> datas;
@@ -76,6 +83,37 @@ public class HomePageKnowledgeFragment extends BaseFragment{
 
 
         });
+        Scorell scorell = new Scorell(recyclerView, getContext());
 
+        scorell.load();
+        IntentFilter intentFilter = new IntentFilter("LOADING");
+        receiver = new Receiver();
+        getContext().registerReceiver(receiver, intentFilter);
+    }
+    class Receiver extends BroadcastReceiver {
+
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            pager++;
+            final String url1 = "http://food.boohee.com/fb/v1/feeds/category_feed?page="+pager+"&category=3&per=10";
+
+            NextTool.getInstance().startRequest(url1, HomePageKnowledgeBean.class, new CallBack<HomePageKnowledgeBean>() {
+
+                @Override
+                public void onSuccess(HomePageKnowledgeBean respomse) {
+
+                    datas.addAll(respomse.getFeeds());
+                    homePageKnowledgeAdapter.setDatas(datas);
+                }
+
+                @Override
+                public void onError(Throwable throwable) {
+
+
+                }
+            });
+        }
     }
 }

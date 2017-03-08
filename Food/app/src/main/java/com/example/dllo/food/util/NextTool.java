@@ -28,6 +28,7 @@ public class NextTool implements NetInterFace{
 
     @Override
     public void startRequest(String url, CallBack<String> callBack) {
+
         mInterface.startRequest(url,callBack);
     }
 

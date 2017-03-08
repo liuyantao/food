@@ -21,7 +21,7 @@
             android:layout_centerVertical="true"
             android:drawableLeft="@mipmap/ic_back_dark_center"
             android:text="登录"
-            android:background="#ffffff"
+            android:background="@color/library_query_tv"
             android:textSize="18dp"/>
 
     </RelativeLayout>
@@ -47,14 +47,14 @@
             android:layout_margin="20dp"
             android:layout_centerInParent="true"/>
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/library_fragment_linearlayout_height"
+            android:layout_height="@dimen/library_fragment_linearlayout_height"
             android:src="@mipmap/img_compare_add"
             android:layout_toLeftOf="@+id/activity_library_search_vs"
             android:layout_centerVertical="true"/>
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/library_fragment_linearlayout_height"
+            android:layout_height="@dimen/library_fragment_linearlayout_height"
             android:src="@mipmap/img_compare_add"
             android:layout_toRightOf="@+id/activity_library_search_vs"
             android:layout_centerVertical="true"/>

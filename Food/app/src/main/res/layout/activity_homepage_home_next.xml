@@ -45,7 +45,7 @@
                 android:id="@+id/activity_homepage_home_next_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/fragment_home_tv"
                 android:layout_toRightOf="@+id/activity_homepage_home_next_ci"/>
 
               <ImageView

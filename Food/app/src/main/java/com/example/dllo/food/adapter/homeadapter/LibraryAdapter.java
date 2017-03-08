@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.dllo.food.R;
 import com.example.dllo.food.base.BaseHolder;
 import com.example.dllo.food.bean.CateGoriesBean;
+import com.example.dllo.food.util.LibraryRecycleViewItemClick;
 import com.example.dllo.food.util.OnRecycleViewItemClick;
 
 import java.util.List;
@@ -24,10 +25,11 @@ import java.util.List;
 public class LibraryAdapter extends RecyclerView.Adapter<BaseHolder>{
     private Context context;
     private List<CateGoriesBean.GroupBean.CategoriesBean> datas;
-    private OnRecycleViewItemClick mOnRecycleViewItemClick;
+    private LibraryRecycleViewItemClick mOnRecycleViewItemClick;
 
-    public void setOnRecycleViewItemClick(OnRecycleViewItemClick onRecycleViewItemClick) {
+    public void setOnRecycleViewItemClick(LibraryRecycleViewItemClick onRecycleViewItemClick) {
         mOnRecycleViewItemClick = onRecycleViewItemClick;
+        notifyDataSetChanged();
     }
 
     public LibraryAdapter(Context context) {
@@ -47,12 +49,13 @@ public class LibraryAdapter extends RecyclerView.Adapter<BaseHolder>{
 
     @Override
     public void onBindViewHolder(BaseHolder holder, final int position) {
+        final String title = datas.get(position).getName();
      holder.setImage(R.id.library_fragment_IV,datas.get(position).getImage_url());
         holder.setText(R.id.item_showtv,datas.get(position).getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mOnRecycleViewItemClick.Onclick(position);
+                mOnRecycleViewItemClick.onClick(position,title);
             }
         });
         holder.itemView.setTag(datas);

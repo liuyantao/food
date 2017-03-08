@@ -12,12 +12,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#ffffff">
+        android:background="@color/library_query_tv">
 
         <ImageButton
             android:id="@+id/activity_library_next_ib"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/library_query_tv"
+            android:layout_height="@dimen/library_query_tv"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:background="@mipmap/ic_back_dark_center"/>
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/activity_library_next_ib"
-            android:textColor="#000000"
+            android:textColor="@color/text_color_nor"
             android:textSize="20sp"
             />
     </RelativeLayout>
@@ -36,22 +36,24 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#c9c9c9"
+        android:background="@color/library_line"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#ffffff">
+        android:layout_height="@dimen/library_query_tv"
+        android:background="@color/library_query_tv">
 
-        <TextView
+        <Button
             android:id="@+id/activity_library_next_tv"
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="@dimen/library_next_text"
             android:text="营养素排序"
-            android:textColor="#000000"/>
+            android:background="@color/library_query_tv"
+            android:textColor="@color/text_color_nor"/>
 
         <ImageButton
             android:id="@+id/activity_library_next_button"
@@ -67,16 +69,19 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#c9c9c9"/>
+        android:background="@color/library_line"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/activity_library_next_rl"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
-    <!--<ListView-->
-    <!--android:id="@+id/activity_library_next_lv"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content">-->
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/activity_library_next_rl"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>-->
+    <ListView
+    android:id="@+id/activity_library_next_lv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-    <!--</ListView>-->
+    </ListView>
+
+
+
 </LinearLayout>

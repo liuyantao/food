@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.dllo.food.R;
 import com.example.dllo.food.bean.HomePageEvaluationBean;
 import com.example.dllo.food.base.BaseHolder;
@@ -52,10 +53,12 @@ public class HomePageEvaluationAdapter extends RecyclerView.Adapter<BaseHolder> 
 //        holder.homepageEvaluatAionuthor.setText(datas.get(position).getSource());
 //        holder.homepageEvaluationArticle.setText(datas.get(position).getTitle());
 //        holder.homepageEvaluationRead.setText(datas.get(position).getTail());
-        holder.setImage(R.id.homepage_evaluation_iv,datas.get(position).getBackground());
+
+
         holder.setText(R.id.homepage_evaluation_author,datas.get(position).getSource());
         holder.setText(R.id.homepage_evaluation_article,datas.get(position).getTitle());
         holder.setText(R.id.homepage_evaluation_read,datas.get(position).getTail());
+        holder.setImage(R.id.homepage_evaluation_iv,datas.get(position).getBackground());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

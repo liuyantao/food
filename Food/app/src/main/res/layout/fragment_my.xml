@@ -165,11 +165,13 @@
     </LinearLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_marginTop="10dp"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+
+        android:layout_marginTop="@dimen/library_next_text"
+        android:layout_width="@dimen/library_fragment_linearlayout_height"
+        android:layout_height="@dimen/library_fragment_linearlayout_height"
         android:src="@mipmap/img_default_avatar"
         android:id="@+id/imageView"
+
         android:layout_below="@+id/fragment_my_imageButton"
         android:layout_centerHorizontal="true" />
 

@@ -3,6 +3,7 @@ package com.example.dllo.food.util;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import com.google.gson.Gson;
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -11,6 +12,9 @@ import com.example.dllo.food.R;
 import com.example.dllo.food.activity.RegisterActivity;
 import com.example.dllo.food.activity.SetActivity;
 import com.example.dllo.food.base.BaseFragment;
+
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.PlatformDb;
 
 /**
  * ✎﹏﹏﹏.₯㎕*﹏﹏﹏
@@ -24,6 +28,7 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
     private ImageButton imageButton;
     private RelativeLayout relativeLayout ,relativeLayout_collect ,
             relativeLayout_uploading ,relativeLayout_indent;
+    private ImageView mImageView;
 
     @Override
     public int setLayout() {
@@ -32,6 +37,8 @@ public class MyFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void initView(View view) {
+        mImageView = (ImageView) view.findViewById(R.id.imageView);
+
 
         button = (Button) view.findViewById(R.id.fragment_my_button);
         relativeLayout = (RelativeLayout) view.findViewById(R.id.fragment_my_RelativeLayout);

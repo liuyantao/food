@@ -7,9 +7,9 @@
     >
     <ImageView
         android:id="@+id/homepage_evaluation_iv"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginTop="@dimen/fragment_home_tv"
+        android:layout_marginLeft="@dimen/item_home_first_textview"
+        android:layout_marginRight="@dimen/item_home_first_textview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@color/library_query_tv"/>
@@ -20,7 +20,7 @@
     android:layout_centerHorizontal="true"
     android:text="@string/homepage"
     android:textColor="@color/library_query_tv"
-    android:textSize="10dp"
+    android:textSize="@dimen/fragment_home_tv"
     android:layout_marginTop="30dp"
 
    />
@@ -41,8 +41,8 @@
        android:text="@string/my"
        android:textColor="@color/library_query_tv"
        android:layout_centerHorizontal="true"
-       android:layout_marginBottom="30dp"
-       android:textSize="10dp"
+       android:layout_marginBottom="@dimen/fragment_my_btn_register"
+       android:textSize="@dimen/fragment_home_tv"
        />
 
 </RelativeLayout>

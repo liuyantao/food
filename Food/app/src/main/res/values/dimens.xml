@@ -25,5 +25,9 @@
     <dimen name="layout_height">85dp</dimen>
     <dimen name="item_home_review_image">270dp</dimen>
     <dimen name="layout_marginTop">35dp</dimen>
+    <dimen name="layout_margin_line">1dp</dimen>
+    <dimen name="liyout_margin_text">13sp</dimen>
+    <dimen name="library_next_text">10sp</dimen>
+    <dimen name="library_next_relitive">50dp </dimen>
 
 </resources>

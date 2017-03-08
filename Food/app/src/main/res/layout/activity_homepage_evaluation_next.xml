@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.8"
-        android:background="#ffffff">
+        android:background="@color/library_query_tv">
         <Button
             android:id="@+id/activity_homepage_evaluation_next"
             android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
             android:layout_centerVertical="true"
             android:drawableLeft="@mipmap/ic_back_dark_center"
             android:text="资讯详情"
-            android:background="#ffffff"
+            android:background="@color/library_query_tv"
             android:textSize="18dp"/>
         <!--<ImageView-->
         <!--android:id="@+id/activity_homepage_home_next_imv"-->

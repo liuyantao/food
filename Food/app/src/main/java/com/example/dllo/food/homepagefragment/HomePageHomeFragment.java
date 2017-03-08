@@ -1,6 +1,9 @@
 package com.example.dllo.food.homepagefragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.RecyclerView;
@@ -11,10 +14,12 @@ import com.example.dllo.food.R;
 import com.example.dllo.food.activity.homepageactivity.HomePageHomeNextActivity;
 import com.example.dllo.food.adapter.HomePageHomeAdapter;
 import com.example.dllo.food.base.BaseFragment;
+import com.example.dllo.food.bean.HomePageFoodBean;
 import com.example.dllo.food.bean.HomePageHomeBean;
 import com.example.dllo.food.util.CallBack;
 import com.example.dllo.food.util.NextTool;
 import com.example.dllo.food.util.OnRecycleViewItemClick;
+import com.example.dllo.food.util.Scorell;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +33,8 @@ import java.util.List;
 public class HomePageHomeFragment extends BaseFragment{
     private RecyclerView recyclerView;
     private HomePageHomeAdapter homePageHomeAdapter;
+    private int pager = 1;
+    private Receiver receiver;
     public static final String url = "http://food.boohee.com/fb/v1/feeds/category_feed?page=1&category=1&per=10";
     private List<HomePageHomeBean.FeedsBean> datas;
   private Handler handler = new Handler(Looper.getMainLooper());
@@ -74,5 +81,41 @@ public class HomePageHomeFragment extends BaseFragment{
             }
         });
 
+        //初始化服务类广播
+        Scorell scorell = new Scorell(recyclerView, getContext());
+
+        scorell.load();
+        //当刷新的的时候发送一条广播  加载数据
+        IntentFilter intentFilter = new IntentFilter("LOADING");
+        receiver = new Receiver();
+        getContext().registerReceiver(receiver, intentFilter);
+    }
+    class Receiver extends BroadcastReceiver {
+
+        //拼接网址并解析
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            pager++;
+            final String url1 = "http://food.boohee.com/fb/v1/feeds/category_feed?page=" + pager + "&category=3&per=10";
+
+            NextTool.getInstance().startRequest(url1, HomePageHomeBean.class, new CallBack<HomePageHomeBean>() {
+
+                @Override
+                public void onSuccess(HomePageHomeBean respomse) {
+
+                    datas.addAll(respomse.getFeeds());
+                    homePageHomeAdapter.setDatas(datas);
+                }
+
+                @Override
+                public void onError(Throwable throwable) {
+
+
+                }
+            });
+
+        }
     }
 }
